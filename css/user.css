@@ -1,0 +1,152 @@
+/* --- NEW STYLES FOR ACCOUNT PAGE --- */
+
+/* Main layout container */
+.account-page-layout {
+  display: flex;
+  gap: 30px;
+  padding: 40px 0;
+  background-color: #fff; /* Ensure white background for content area */
+}
+
+/* Left Sidebar */
+.account-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.user-profile-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.user-profile-card .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+.user-profile-card .user-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.user-profile-card .join-date {
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.user-profile-card .action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.user-profile-card .action-buttons .btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
+}
+
+.user-profile-card .btn.logout-btn {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.user-profile-card .btn.dashboard-btn {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #343a40;
+}
+
+.support-info {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.support-info a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+/* Right Content Area */
+.account-main-content {
+  flex-grow: 1;
+}
+
+.account-main-content h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:first-child {
+  padding-top: 0;
+}
+
+.info-details p {
+  margin: 0 0 8px 0;
+  color: #555;
+  font-size: 1em;
+}
+
+.info-details .value,
+.info-details .info-avatar {
+  font-weight: 500;
+  color: #000;
+}
+
+.info-details .info-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.info-details input[type="password"] {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.change-link {
+  font-weight: bold;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.change-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .account-page-layout {
+    flex-direction: column;
+  }
+  .account-sidebar {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

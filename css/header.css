@@ -1,0 +1,133 @@
+/* --- Header --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  /* Hoặc màu nền chung của trang */
+}
+
+* {
+  box-sizing: border-box;
+  /* Giúp việc quản lý padding và border dễ dàng hơn */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 15px;
+  /* Thêm padding ngang để tránh nội dung dính sát vào cạnh màn hình */
+}
+
+.header {
+  background-color: #124461;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  /* Cho phép các mục xuống dòng trên màn hình nhỏ */
+  gap: 10px;
+  /* Thêm khoảng cách giữa các mục trong header */
+}
+
+.logo img {
+  height: 50px;
+  display: block;
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 1;
+  /* Cho phép thanh tìm kiếm mở rộng */
+  max-width: 400px;
+  /* Giới hạn chiều rộng tối đa */
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  flex-grow: 1;
+  /* Cho phép input mở rộng lấp đầy thanh search */
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}
+
+.hotline,
+.cart {
+  font-weight: bold;
+  color: white;
+  /* Đặt màu chữ cho dễ nhìn trên nền xanh */
+}
+
+.cart a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation {
+  background-color: #ebf0f5;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* Cho phép menu xuống dòng */
+  gap: 0 20px;
+  /* Khoảng cách giữa các mục menu */
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 5px 0;
+  display: inline-block;
+}
+
+.navigation ul li a:hover {
+  color: #007bff;
+}
+
+.icon-wrapper ion-icon {
+  color: white;
+  font-size: 24px;
+}
+
+.icon-wrapper ion-icon:hover {
+  color: #007bff;
+  transform: scale(1.1);
+  transition: color 0.3s ease, transform 0.3s ease;
+}

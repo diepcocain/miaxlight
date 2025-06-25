@@ -1,33 +1,17 @@
-<?php
-session_start();
-require './config/db.php';
-
-// Kiểm tra nếu MaSV đã lưu trong session
-if (isset($_SESSION['id'])) {
-    $id = $_SESSION['id']; // Gán MaSV từ session vào biến $MaSV
-} else {
-    echo "Bạn chưa đăng nhập.";
-}
-
-?>
-
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Sản Phẩm - Miax Lighting</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="Logo" href="">
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <title>Document</title>
+    <!--== CSS ==-->
+    <link rel="stylesheet" href="./css/chinhsach.css">
+    <link rel="stylesheet" href="./css/header.css">
 </head>
 
 <body>
-
+    <!-- Header -->
     <header class="header">
         <div class="container header-content">
             <div class="logo">
@@ -52,7 +36,6 @@ if (isset($_SESSION['id'])) {
                     <ion-icon name="bag-handle-outline"></ion-icon>
                 </a>
             </div>
-
         </div>
     </header>
 
@@ -65,108 +48,77 @@ if (isset($_SESSION['id'])) {
             </ul>
         </div>
     </nav>
+    <!-- End header -->
 
-    <main class="main-content">
+    <!-- Content -->
+    <main>
         <div class="container">
-            <section class="hero-section">
-                <div class="hero-left">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/11.png"
-                        alt="Miax Lighting - Tiên phong giải pháp ánh sáng">
-                </div>
-            </section>
+            <div class="row">
+                <section class="leftcolumn">
+                    <article class="card">
+                        <nav aria-label="breadcrumb">
+                            <a href="./main.php">Trang chủ</a> / Chính sách
+                        </nav>
+                        <br>
+                        <h3>A. BẢO HÀNH</h3>
+                        <h4>1. Điều kiện bảo hành</h4>
+                        <p>Sản phẩm được bảo hành miễn phí nếu sản phẩm đó còn thời hạn bảo hành được tính kể từ ngày
+                            giao hàng, sản phẩm được bảo hành trong thời hạn bảo hành theo quy định riêng của từng chủng
+                            loại sản phẩm liên quan đến tất cả các sự cố về mặt kỹ thuật do nhà sản xuất.</p>
 
-            <aside class="sidebar">
-                <div class="promo-block">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/12.png"
-                        alt="Cho Thuê Đèn Sân Khấu, Sự Kiện, Đám cưới">
-                </div>
-                <div class="promo-block">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/21.png"
-                        alt="Setup Hệ Thống Ánh Sáng Phòng Karaoke Chuyên Nghiệp">
-                </div>
-                <div class="promo-block">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/31.png"
-                        alt="Giải Pháp Ánh Sáng Đỉnh Cao Cho Công Trình Bar">
-                </div>
-            </aside>
-        </div>
+                        <h4>2. Trường hợp không được bảo hành: (sẽ hỗ trợ thay thế, sửa chữa có tính phí)</h4>
+                        <p>Sản phẩm đã hết thời hạn bảo hành;
+                            <br>
+                            Sản phẩm bị hư hại, bể vở, rách do cố ý hoặc ngoại lực tác động vào như thiên tai, va đập,
+                            rơi vỡ, côn trùng xâm nhập, chuột cắn…
+                            <br>
+                            Sử dụng sản phẩm không theo quy định của nhà sản xuất (hoặc sách hướng dẫn sử dụng). Sử dụng
+                            không đúng điện áp theo quy định gây hư hỏng;
+                            <br>
+                            Không bảo hành các phụ kiện: dây nguồn, ốp nhựa, khóa an toàn.
+                        </p>
 
-        <section class="features-banner">
-            <div class="container feature-items">
-                <div class="feature-item">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/a00021.png"
-                        alt="Hàng nhập khẩu chính hãng 100%">
-                </div>
-                <div class="feature-item">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/a00022.png"
-                        alt="Bảo hành 1 năm hỗ trợ trọn đời sản phẩm">
-                </div>
-                <div class="feature-item">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/a00024.png"
-                        alt="Lỗi sản phẩm 1 đổi 1 trong 30 ngày">
-                </div>
+                        <h4>3. Thời gian bảo hành: Thời gian bảo hành sẽ tùy thuộc vào từng nhóm sản phẩm cụ thể.</h4>
+                        <p>Việc bảo hành được thực hiện theo số điện thoại mà khách hàng cung cấp khi mua hàng;
+                            <br>
+                            Thời gian bảo hành căn cứ vào thời gian nhận hàng (thể hiện trên hóa đơn mua hàng và thẻ bảo
+                            hành).
+                        </p>
+                        <br>
+
+                        <h3>B. QUY TRÌNH TIẾP NHẬN BẢO HÀNH, BẢO TRÌ – BẢO DƯỠNG <br>(đối với nhóm sản phẩm được bảo
+                            hành
+                            tận nhà)</h3>
+                        <p>
+                            <b>Bước 1:</b> Gọi đến hotline 0939.933.986 hoặc liên hệ qua email: miaxstorevn@gmail.com
+                            <br>
+                            <b>Bước 2:</b> Cho thông tin tên, địa chỉ, số điện thoại của khách hàng.
+                            <br>
+                            <b></b>Bước 3:</b> Thông báo tình trạng lỗi cụ thể của sản phẩm.
+                        </p>
+
+
+                        <div class="lienhe">
+                            <span aria-hidden="true">📞</span>
+                            <p>Hotline/Zalo: 0986.689.999</p>
+                        </div>
+                        <div class="lienhe">
+                            <span aria-hidden="true">✉️</span>
+                            <p>Email: miaxstore@gmail.com</p>
+                        </div>
+                    </article>
+                </section>
+                <aside class="rightcolumn">
+                    <div class="card">
+                        <h2>Giới thiệu</h2>
+                        <a href="./main.php">Sản phẩm</a>
+                    </div>
+                </aside>
             </div>
-        </section>
-
-        <div class="page-container">
-            <header class="page-header">
-                <h1>TRANG SẢN PHẨM</h1>
-                <nav aria-label="breadcrumb" class="breadcrumbs">
-                    <ul>
-                        <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Miax Lighting</a></li>
-                        <li><a href="#">LASER</a></li>
-                        <li><a href="#">Đèn Sân Khấu Moving</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <section class="product-listing">
-                <div class="product-grid">
-                    <?php
-                    $sql = "SELECT * FROM tb_sanpham ORDER BY createdAt DESC LIMIT 1";
-                    $result = mysqli_query($conn, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '
-                                <article class="product-item">
-                                    <a href="id.php?id=' . $row['id'] . '" class="product-link">
-                                        <img src="' . $row['image_main'] . '"
-                                            alt="' . $row['name'] . '">
-                                        <h3 class="product-name">' . $row['name'] . '</h3>
-                                        <p class="product-price">Giá KM: ' . $row['price'] . 'đ</p>
-                                    </a>
-                                </article>
-                                ';
-                        }
-                    }
-                    ?>
-                    <?php
-                    $sql = "SELECT * FROM tb_sanpham ORDER BY createdAt DESC LIMIT 1,2";
-                    $result = mysqli_query($conn, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '
-                                <article class="product-item">
-                                    <a href="id.php?id=' . $row['id'] . '" class="product-link">
-                                        <img src="' . $row['image_main'] . '"
-                                            alt="' . $row['name'] . '">
-                                        <h3 class="product-name">' . $row['name'] . '</h3>
-                                        <p class="product-price">Giá KM: ' . $row['price'] . 'đ</p>
-                                    </a>
-                                </article>
-                                ';
-                        }
-                    }
-                    ?>
-
-                </div>
-            </section>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-column">
@@ -191,7 +143,7 @@ if (isset($_SESSION['id'])) {
                 <p class="footer-hotline">HOTLINE TƯ VẤN</p>
                 <div class="hotline_f">
                     <span aria-hidden="true">📞</span>
-                    <p class="footer-phone-number">0986.689.999</p>
+                    <p class="footer-phone-number">0999.999.999</p>
                 </div>
             </div>
         </div>
@@ -213,7 +165,7 @@ if (isset($_SESSION['id'])) {
                 <span>Tổng cộng:</span>
                 <span id="cartTotal">0 ₫</span>
             </div>
-            <a href="./giohang.php">
+            <a href="./giohang.html" style="text-decoration: none;">
                 <button type="button" class="checkout-btn">THANH TOÁN</button>
             </a>
         </div>
@@ -222,6 +174,7 @@ if (isset($_SESSION['id'])) {
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             // Lấy các phần tử cần thiết từ DOM
             const cartSidebar = document.getElementById('cartSidebar');
             const cartOverlay = document.getElementById('cartOverlay');
@@ -255,11 +208,26 @@ if (isset($_SESSION['id'])) {
             // Thêm sự kiện click cho nút đóng
             if (closeCartBtn) {
                 closeCartBtn.addEventListener('click', closeCart);
-            };
+            }
+
+            // Thêm sự kiện click cho lớp phủ để đóng sidebar
+            if (cartOverlay) {
+                cartOverlay.addEventListener('click', closeCart);
+            }
+
+            // (Tùy chọn) Đóng giỏ hàng bằng phím 'Escape'
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && cartSidebar.classList.contains('open')) {
+                    closeCart();
+                }
+            });
 
         });
     </script>
 
+    <!-- ICON -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

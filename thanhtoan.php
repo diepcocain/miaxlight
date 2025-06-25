@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/thanhtoan.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://miaxlighting.com/wp-content/uploads/2025/03/Noi-dung-doan-van-ban-cua-ban-2.png"
+                    alt="Miax Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+                <button type="submit">Tìm</button>
+            </div>
+            <div class="hotline">
+                HOTLINE 24/7: 0986.689.999
+            </div>
+
+            <div class="icon-wrapper login-icon" title="Đăng nhập">
+                <a href="./dangnhap.html">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="icon-wrapper cart-icon" title="Giỏ hàng">
+                <a href="">
+                    <ion-icon name="bag-handle-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="./main.php">Trang chủ</a></li>
+                <li><a href="./gioithieu.php">Giới thiệu</a></li>
+                <li><a href="./chinhsach.php">Chính sách</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End header -->
+
+    <!-- Content -->
+    <main class="checkout-main">
+        <div class="container">
+            <nav class="cart-breadcrumbs">
+                <span class="active_"><a href="./giohang.php" style="text-decoration: none; color: #6c757d;">GIỎ
+                        HÀNG</a></span> &gt;
+                <span><a href="./thanhtoan.php" style="text-decoration: none; color: #333;">THANH TOÁN</a></span>
+            </nav>
+            <div class="checkout-content">
+                <section class="checkout-form-container">
+                    <form action="#" method="POST">
+                        <div class="billing-details">
+                            <h3>THÔNG TIN THANH TOÁN</h3>
+                            <div class="form-row-halves">
+                                <div class="form-field">
+                                    <label for="billing_last_name">Họ <abbr class="required"
+                                            title="bắt buộc">*</abbr></label>
+                                    <input type="text" id="billing_last_name" name="billing_last_name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="billing_first_name">Tên <abbr class="required"
+                                            title="bắt buộc">*</abbr></label>
+                                    <input type="text" id="billing_first_name" name="billing_first_name" required>
+                                </div>
+                            </div>
+                            <div class="form-field form-field-full">
+                                <label for="billing_address">Địa chỉ <abbr class="required"
+                                        title="bắt buộc">*</abbr></label>
+                                <input type="text" id="billing_address" name="billing_address" placeholder="Địa chỉ"
+                                    required>
+                            </div>
+                            <div class="form-field form-field-full">
+                                <label for="billing_phone">Số điện thoại <abbr class="required"
+                                        title="bắt buộc">*</abbr></label>
+                                <input type="tel" id="billing_phone" name="billing_phone" required
+                                    pattern="[0-9]{10,11}" title="Số điện thoại phải có 10 hoặc 11 chữ số.">
+                            </div>
+                            <div class="form-field form-field-full">
+                                <label for="billing_email">Địa chỉ email <abbr class="required"
+                                        title="bắt buộc">*</abbr></label>
+                                <input type="email" id="billing_email" name="billing_email" required>
+                            </div>
+                        </div>
+
+                        <div class="additional-info">
+                            <h3>THÔNG TIN BỔ SUNG</h3>
+                            <div class="form-field form-field-full">
+                                <label for="order_comments">Ghi chú đơn hàng (tùy chọn)</label>
+                                <textarea id="order_comments" name="order_comments"
+                                    placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="order-summary-container">
+                    <div class="order-summary-box">
+                        <h3>ĐƠN HÀNG CỦA BẠN</h3>
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">SẢN PHẨM</th>
+                                    <th scope="col">TẠM TÍNH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cart-item">
+                                    <td>Đèn LED Nhện SPIDER LIGHT × 1</td>
+                                    <td>1.250.000 ₫</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th>Tạm tính</th>
+                                    <td>1.250.000 ₫</td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th>Tổng</th>
+                                    <td><strong>1.250.000 ₫</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="payment-methods">
+                            <ul>
+                                <li>
+                                    <label for="payment_cod">Trả tiền mặt khi nhận hàng</label>
+                                    <div class="payment-box">
+                                        <p>Trả tiền mặt khi giao hàng.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button type="submit" class="place-order-btn">ĐẶT HÀNG</button>
+
+                        <p class="privacy-policy">
+                            Dữ liệu cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng của bạn, hỗ trợ trải nghiệm của
+                            bạn trên toàn bộ trang web này và cho các mục đích khác được mô tả trong <a
+                                href="#">chính sách riêng tư</a> của chúng tôi.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <p><strong>Miax Lighting</strong> - Đơn vị chuyên phân phối, cung cấp các thiết bị ánh sáng sân khấu,
+                    tiệc cưới, karaoke toàn quốc.</p>
+                <p>Số Hotline/Zalo: 0986.689.999</p>
+                <p>Email: miaxstorevn@gmail.com</p>
+                <p>Website: https://miaxlighting.com</p>
+                <p>Người chịu trách nhiệm: Nguyễn Tuấn Điệp</p>
+            </div>
+            <div class="footer-column">
+                <h4>CHÍNH SÁCH TẠI MIAX LIGHTING</h4>
+                <ul>
+                    <li><a href="./chinhsach.php">Chính sách thanh toán</a></li>
+                    <li><a href="./chinhsach.php">Chính sách đổi sản phẩm</a></li>
+                    <li><a href="./chinhsach.php">Chính sách bảo hành</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>TƯ VẤN & HỖ TRỢ KHÁCH HÀNG</h4>
+                <p class="footer-hotline">HOTLINE TƯ VẤN</p>
+                <div class="hotline_f">
+                    <span aria-hidden="true">📞</span>
+                    <p class="footer-phone-number">0986.689.999</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright 2025 &copy; Miax Lighting</p>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3>GIỎ HÀNG</h3>
+            <button type="button" class="close-cart-btn" aria-label="Đóng giỏ hàng">&times;</button>
+        </div>
+        <div class="cart-sidebar-content">
+            <p class="empty-cart-message">Chưa có sản phẩm trong giỏ hàng.</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total-line">
+                <span>Tổng cộng:</span>
+                <span id="cartTotal">0 ₫</span>
+            </div>
+            <a href="./giohang.php" style="text-decoration: none;">
+                <button type="button" class="checkout-btn">THANH TOÁN</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Lấy các phần tử cần thiết từ DOM
+            const cartSidebar = document.getElementById('cartSidebar');
+            const cartOverlay = document.getElementById('cartOverlay');
+            const closeCartBtn = document.querySelector('.close-cart-btn');
+            const openCartIcons = document.querySelectorAll('.cart-icon'); // Lấy tất cả các icon giỏ hàng
+
+            // Hàm để mở thanh giỏ hàng
+            function openCart() {
+                if (cartSidebar && cartOverlay) {
+                    cartSidebar.classList.add('open');
+                    cartOverlay.classList.add('active');
+                }
+            }
+
+            // Hàm để đóng thanh giỏ hàng
+            function closeCart() {
+                if (cartSidebar && cartOverlay) {
+                    cartSidebar.classList.remove('open');
+                    cartOverlay.classList.remove('active');
+                }
+            }
+
+            // Thêm sự kiện click cho tất cả các biểu tượng giỏ hàng để mở sidebar
+            openCartIcons.forEach(icon => {
+                icon.addEventListener('click', function(event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+                    openCart();
+                });
+            });
+
+            // Thêm sự kiện click cho nút đóng
+            if (closeCartBtn) {
+                closeCartBtn.addEventListener('click', closeCart);
+            }
+
+            // Thêm sự kiện click cho lớp phủ để đóng sidebar
+            if (cartOverlay) {
+                cartOverlay.addEventListener('click', closeCart);
+            }
+
+            // (Tùy chọn) Đóng giỏ hàng bằng phím 'Escape'
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && cartSidebar.classList.contains('open')) {
+                    closeCart();
+                }
+            });
+
+        });
+    </script>
+
+    <!-- ICON -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

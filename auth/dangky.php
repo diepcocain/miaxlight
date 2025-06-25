@@ -26,7 +26,7 @@ if (isset($_POST['signUp'])) {
         // Insert new user
         $sql = "INSERT INTO tb_user (name, email, password) VALUES ('$name', '$email', '$password')";
         if (mysqli_query($conn, $sql)) {
-            echo "<script>alert('Đăng ký thành công!'); window.location='../main.php';</script>";
+            echo "<script>alert('Đăng ký thành công!'); window.location='../login.php';</script>";
         } else {
             echo "<script>alert('Đăng ký thất bại: " . mysqli_error($conn) . "'); window.history.back();</script>";
         }

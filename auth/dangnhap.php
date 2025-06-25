@@ -26,7 +26,8 @@ if (isset($_POST['signIn'])) {
         while ($row = mysqli_fetch_assoc($result)) {
 
             // Người dùng đã đăng nhập thành công
-            $_SESSION['user_image'] = $row['Image'];  // Lưu URL hình ảnh vào phiên
+            $_SESSION['loggedin'] = true;
+            $_SESSION['image'] = $row['image'];  // Lưu URL hình ảnh vào phiên
             $_SESSION['name'] = $row['name'];
             $_SESSION['phone'] = $row['phone'];
             $_SESSION['email'] = $row['email'];

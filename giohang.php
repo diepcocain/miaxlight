@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/giohang.css">
+
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://miaxlighting.com/wp-content/uploads/2025/03/Noi-dung-doan-van-ban-cua-ban-2.png"
+                    alt="Miax Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+                <button type="submit">Tìm</button>
+            </div>
+            <div class="hotline">
+                HOTLINE 24/7: 0986.689.999
+            </div>
+
+            <div class="icon-wrapper login-icon" title="Đăng nhập">
+                <a href="./user.php">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="icon-wrapper cart-icon" title="Giỏ hàng">
+                <a href="">
+                    <ion-icon name="bag-handle-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="./main.php">Trang chủ</a></li>
+                <li><a href="./gioithieu.php">Giới thiệu</a></li>
+                <li><a href="./chinhsach.php">Chính sách</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <nav class="cart-breadcrumbs">
+                <span class="active">GIỎ HÀNG</span> &gt;
+                <span><a href="./thanhtoan.php" style="text-decoration: none; color: var(--gray-text);">
+                        THANH TOÁN</a></span>
+            </nav>
+
+            <div class="cart-grid">
+                <div class="cart-items-column">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">SẢN PHẨM</th>
+                                <th>GIÁ</th>
+                                <th>SỐ LƯỢNG</th>
+                                <th>TẠM TÍNH</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="product-info">
+                                        <button class="remove-item" title="Xóa sản phẩm">×</button>
+                                        <img src="https://miaxlighting.com/wp-content/uploads/2025/03/DEN-LED-SAN-KHAU-SPIDER-LIGHT-44-300x300.jpg"
+                                            alt="Đèn LED Nhện">
+                                        <a href="#" class="product-name">Đèn LED Nhện SPIDER LIGHT</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="product-price" data-price="1250000">1.250.000₫</span>
+                                </td>
+                                <td>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn minus">-</button>
+                                        <input type="number" value="1" min="1" class="product-quantity">
+                                        <button class="quantity-btn plus">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="product-subtotal">1.250.000₫</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="cart-actions">
+                        <a href="./main.php" class="btn btn-continue">← Tiếp tục xem sản phẩm</a>
+                    </div>
+                </div>
+
+                <div class="cart-summary-column">
+                    <div class="cart-summary-box">
+                        <h2>TỔNG CỘNG GIỎ HÀNG</h2>
+                        <div class="summary-line">
+                            <span>Tạm tính</span>
+                            <span id="cartSubtotalSummary">1.250.000₫</span>
+                        </div>
+                        <div class="summary-line total">
+                            <span>Tổng</span>
+                            <span id="cartTotalSummary">1.250.000₫</span>
+                        </div>
+                        <a href="./thanhtoan.php" class="btn btn-checkout">Tiến hành thanh toán</a>
+
+                        <div class="coupon-section">
+                            <label for="coupon_code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-tag-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                </svg>
+                                Mã ưu đãi
+                            </label>
+                            <form class="coupon-form">
+                                <input type="text" id="coupon_code" placeholder="Nhập mã giảm giá">
+                                <button type="submit" class="btn-apply-coupon">Áp dụng</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <p><strong>Miax Lighting</strong> - Đơn vị chuyên phân phối, cung cấp các thiết bị ánh sáng sân khấu,
+                    tiệc cưới, karaoke toàn quốc.</p>
+                <p>Số Hotline/Zalo: 0986.689.999</p>
+                <p>Email: miaxstorevn@gmail.com</p>
+                <p>Website: https://miaxlighting.com</p>
+                <p>Người chịu trách nhiệm: Nguyễn Tuấn Điệp</p>
+            </div>
+            <div class="footer-column">
+                <h4>CHÍNH SÁCH TẠI MIAX LIGHTING</h4>
+                <ul>
+                    <li><a href="./chinhsach.php">Chính sách thanh toán</a></li>
+                    <li><a href="./chinhsach.php">Chính sách đổi sản phẩm</a></li>
+                    <li><a href="./chinhsach.php">Chính sách bảo hành</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>TƯ VẤN & HỖ TRỢ KHÁCH HÀNG</h4>
+                <p class="footer-hotline">HOTLINE TƯ VẤN</p>
+                <div class="hotline_f">
+                    <span aria-hidden="true">📞</span>
+                    <p class="footer-phone-number">0986.689.999</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright 2025 &copy; Miax Lighting</p>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3>GIỎ HÀNG</h3>
+            <button type="button" class="close-cart-btn" aria-label="Đóng giỏ hàng">&times;</button>
+        </div>
+        <div class="cart-sidebar-content">
+            <p class="empty-cart-message">Chưa có sản phẩm trong giỏ hàng.</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total-line">
+                <span>Tổng cộng:</span>
+                <span id="cartTotal">0 ₫</span>
+            </div>
+            <a href="./giohang.php" style="text-decoration: none;">
+                <button type="button" class="checkout-btn">THANH TOÁN</button>
+            </a>
+        </div>
+    </div>
+    <div class="cart-sidebar-overlay" id="cartOverlay"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Sidebar functionality (existing)
+            const cartSidebar = document.getElementById('cartSidebar');
+            const cartOverlay = document.getElementById('cartOverlay');
+            const closeCartBtn = document.querySelector('.close-cart-btn');
+            const openCartIcons = document.querySelectorAll('.cart-icon');
+
+            function openCart() {
+                if (cartSidebar && cartOverlay) {
+                    cartSidebar.classList.add('open');
+                    cartOverlay.classList.add('active');
+                }
+            }
+
+            function closeCart() {
+                if (cartSidebar && cartOverlay) {
+                    cartSidebar.classList.remove('open');
+                    cartOverlay.classList.remove('active');
+                }
+            }
+
+            openCartIcons.forEach(icon => {
+                icon.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    openCart();
+                });
+            });
+
+            if (closeCartBtn) {
+                closeCartBtn.addEventListener('click', closeCart);
+            }
+
+            if (cartOverlay) {
+                cartOverlay.addEventListener('click', closeCart);
+            }
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && cartSidebar.classList.contains('open')) {
+                    closeCart();
+                }
+            });
+
+            // New JavaScript for Quantity and Price Calculation
+            const quantitySelectors = document.querySelectorAll('.quantity-selector');
+            const cartSubtotalSummary = document.getElementById('cartSubtotalSummary');
+            const cartTotalSummary = document.getElementById('cartTotalSummary');
+
+            // Helper function to format currency
+            function formatCurrency(amount) {
+                return amount.toLocaleString('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                });
+            }
+
+            // Function to update item subtotal and overall cart total
+            function updateCartTotals() {
+                let overallSubtotal = 0;
+
+                document.querySelectorAll('.cart-table tbody tr').forEach(row => {
+                    const priceElement = row.querySelector('.product-price');
+                    const quantityInput = row.querySelector('.product-quantity');
+                    const subtotalElement = row.querySelector('.product-subtotal');
+
+                    // Extract price. Assuming price is stored in a data attribute for easier parsing.
+                    // We'll modify the HTML to add data-price.
+                    const price = parseFloat(priceElement.dataset.price);
+                    const quantity = parseInt(quantityInput.value);
+
+                    const itemSubtotal = price * quantity;
+                    subtotalElement.textContent = formatCurrency(itemSubtotal);
+                    overallSubtotal += itemSubtotal;
+                });
+
+                cartSubtotalSummary.textContent = formatCurrency(overallSubtotal);
+                cartTotalSummary.textContent = formatCurrency(overallSubtotal); // Assuming no shipping/tax for simplicity
+                // Update sidebar total as well
+                document.getElementById('cartTotal').textContent = formatCurrency(overallSubtotal);
+            }
+
+            // Add event listeners for each quantity selector
+            quantitySelectors.forEach(selector => {
+                const minusButton = selector.querySelector('.minus');
+                const plusButton = selector.querySelector('.plus');
+                const quantityInput = selector.querySelector('.product-quantity');
+
+                minusButton.addEventListener('click', () => {
+                    let currentValue = parseInt(quantityInput.value);
+                    if (currentValue > 1) {
+                        quantityInput.value = currentValue - 1;
+                        updateCartTotals();
+                    }
+                });
+
+                plusButton.addEventListener('click', () => {
+                    let currentValue = parseInt(quantityInput.value);
+                    quantityInput.value = currentValue + 1;
+                    updateCartTotals();
+                });
+
+                // Also listen for manual input changes
+                quantityInput.addEventListener('change', () => {
+                    let currentValue = parseInt(quantityInput.value);
+                    if (isNaN(currentValue) || currentValue < 1) {
+                        quantityInput.value = 1; // Default to 1 if invalid input
+                    }
+                    updateCartTotals();
+                });
+            });
+
+            // Initial calculation when the page loads
+            updateCartTotals();
+
+            // Functionality for removing items (optional, but good to include)
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const row = event.target.closest('tr');
+                    if (row) {
+                        row.remove();
+                        updateCartTotals(); // Recalculate after removal
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

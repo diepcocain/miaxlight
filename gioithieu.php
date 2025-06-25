@@ -1,33 +1,17 @@
-<?php
-session_start();
-require './config/db.php';
-
-// Kiểm tra nếu MaSV đã lưu trong session
-if (isset($_SESSION['id'])) {
-    $id = $_SESSION['id']; // Gán MaSV từ session vào biến $MaSV
-} else {
-    echo "Bạn chưa đăng nhập.";
-}
-
-?>
-
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Sản Phẩm - Miax Lighting</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="Logo" href="">
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <title>Document</title>
+    <!--== CSS ==-->
+    <link rel="stylesheet" href="./css/gioithieu.css">
+    <link rel="stylesheet" href="./css/header.css">
 </head>
 
 <body>
-
+    <!-- Header -->
     <header class="header">
         <div class="container header-content">
             <div class="logo">
@@ -52,7 +36,6 @@ if (isset($_SESSION['id'])) {
                     <ion-icon name="bag-handle-outline"></ion-icon>
                 </a>
             </div>
-
         </div>
     </header>
 
@@ -65,108 +48,49 @@ if (isset($_SESSION['id'])) {
             </ul>
         </div>
     </nav>
+    <!-- End header -->
 
-    <main class="main-content">
+    <!-- Content -->
+    <main>
         <div class="container">
-            <section class="hero-section">
-                <div class="hero-left">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/11.png"
-                        alt="Miax Lighting - Tiên phong giải pháp ánh sáng">
-                </div>
-            </section>
+            <div class="row">
+                <section class="leftcolumn">
+                    <article class="card">
+                        <nav aria-label="breadcrumb">
+                            <a href="./main.php">Trang chủ</a> / Giới thiệu
+                        </nav>
+                        <h4>MIAX LIGHT</h4>
+                        <p>Trong thời đại công nghệ và giải trí phát triển mạnh mẽ, ánh sáng không chỉ là yếu tố chiếu sáng đơn thuần mà còn là nghệ thuật, góp phần tạo nên không gian sống động, hoành tráng và chuyên nghiệp. MIAX LIGHT ra đời với sứ mệnh mang đến các giải pháp ánh sáng tối ưu cho sân khấu, sự kiện, phòng karaoke và các công trình giải trí chuyên nghiệp.</p>
+                        <p>Là đơn vị tiên phong trong lĩnh vực cung cấp và cho thuê thiết bị ánh sáng sân khấu, MIAX LIGHT không ngừng nghiên cứu và cập nhật những công nghệ chiếu sáng hiện đại nhất, đảm bảo mỗi sản phẩm, mỗi giải pháp đều đáp ứng tiêu chuẩn về chất lượng, độ bền và tính thẩm mỹ.</p>
 
-            <aside class="sidebar">
-                <div class="promo-block">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/12.png"
-                        alt="Cho Thuê Đèn Sân Khấu, Sự Kiện, Đám cưới">
-                </div>
-                <div class="promo-block">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/21.png"
-                        alt="Setup Hệ Thống Ánh Sáng Phòng Karaoke Chuyên Nghiệp">
-                </div>
-                <div class="promo-block">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/31.png"
-                        alt="Giải Pháp Ánh Sáng Đỉnh Cao Cho Công Trình Bar">
-                </div>
-            </aside>
-        </div>
+                        <h4>Tầm nhìn MIAX LIGHT</h4>
+                        <p>MIAX LIGHT hướng tới trở thành thương hiệu hàng đầu trong lĩnh vực ánh sáng sân khấu tại Việt Nam, không chỉ đáp ứng nhu cầu trong nước mà còn vươn tầm khu vực. Chúng tôi cam kết mang đến những trải nghiệm ánh sáng đẳng cấp, giúp mọi sự kiện, sân khấu hay không gian giải trí trở nên chuyên nghiệp và ấn tượng.</p>
 
-        <section class="features-banner">
-            <div class="container feature-items">
-                <div class="feature-item">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/a00021.png"
-                        alt="Hàng nhập khẩu chính hãng 100%">
-                </div>
-                <div class="feature-item">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/a00022.png"
-                        alt="Bảo hành 1 năm hỗ trợ trọn đời sản phẩm">
-                </div>
-                <div class="feature-item">
-                    <img src="https://miaxlighting.com/wp-content/uploads/2025/03/a00024.png"
-                        alt="Lỗi sản phẩm 1 đổi 1 trong 30 ngày">
-                </div>
+                        <h4>Sứ mệnh MIAX LIGHT</h4>
+                        <p>“MIAX LIGHT – Thắp sáng đam mê, tạo dựng không gian đẳng cấp”</p>
+                        <p>Chúng tôi không chỉ cung cấp thiết bị mà còn mang đến những giải pháp ánh sáng hoàn chỉnh, góp phần tạo nên những sân khấu hoành tráng, những sự kiện đáng nhớ và những không gian giải trí chuyên nghiệp nhất.</p>
+
+                        <div class="lienhe">
+                            <span aria-hidden="true">📞</span>
+                            <p>Hotline/Zalo: 0986.689.999</p>
+                        </div>
+                        <div class="lienhe">
+                            <span aria-hidden="true">✉️</span>
+                            <p>Email: miaxstore@gmail.com</p>
+                        </div>
+                    </article>
+                </section>
+                <aside class="rightcolumn">
+                    <div class="card">
+                        <h2>Giới thiệu</h2>
+                        <a href="./main.php">Sản phẩm</a>
+                    </div>
+                </aside>
             </div>
-        </section>
-
-        <div class="page-container">
-            <header class="page-header">
-                <h1>TRANG SẢN PHẨM</h1>
-                <nav aria-label="breadcrumb" class="breadcrumbs">
-                    <ul>
-                        <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Miax Lighting</a></li>
-                        <li><a href="#">LASER</a></li>
-                        <li><a href="#">Đèn Sân Khấu Moving</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <section class="product-listing">
-                <div class="product-grid">
-                    <?php
-                    $sql = "SELECT * FROM tb_sanpham ORDER BY createdAt DESC LIMIT 1";
-                    $result = mysqli_query($conn, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '
-                                <article class="product-item">
-                                    <a href="id.php?id=' . $row['id'] . '" class="product-link">
-                                        <img src="' . $row['image_main'] . '"
-                                            alt="' . $row['name'] . '">
-                                        <h3 class="product-name">' . $row['name'] . '</h3>
-                                        <p class="product-price">Giá KM: ' . $row['price'] . 'đ</p>
-                                    </a>
-                                </article>
-                                ';
-                        }
-                    }
-                    ?>
-                    <?php
-                    $sql = "SELECT * FROM tb_sanpham ORDER BY createdAt DESC LIMIT 1,2";
-                    $result = mysqli_query($conn, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '
-                                <article class="product-item">
-                                    <a href="id.php?id=' . $row['id'] . '" class="product-link">
-                                        <img src="' . $row['image_main'] . '"
-                                            alt="' . $row['name'] . '">
-                                        <h3 class="product-name">' . $row['name'] . '</h3>
-                                        <p class="product-price">Giá KM: ' . $row['price'] . 'đ</p>
-                                    </a>
-                                </article>
-                                ';
-                        }
-                    }
-                    ?>
-
-                </div>
-            </section>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-column">
@@ -191,7 +115,7 @@ if (isset($_SESSION['id'])) {
                 <p class="footer-hotline">HOTLINE TƯ VẤN</p>
                 <div class="hotline_f">
                     <span aria-hidden="true">📞</span>
-                    <p class="footer-phone-number">0986.689.999</p>
+                    <p class="footer-phone-number">0999.999.999</p>
                 </div>
             </div>
         </div>
@@ -213,7 +137,7 @@ if (isset($_SESSION['id'])) {
                 <span>Tổng cộng:</span>
                 <span id="cartTotal">0 ₫</span>
             </div>
-            <a href="./giohang.php">
+            <a href="./giohang.html" style="text-decoration: none;">
                 <button type="button" class="checkout-btn">THANH TOÁN</button>
             </a>
         </div>
@@ -222,6 +146,7 @@ if (isset($_SESSION['id'])) {
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             // Lấy các phần tử cần thiết từ DOM
             const cartSidebar = document.getElementById('cartSidebar');
             const cartOverlay = document.getElementById('cartOverlay');
@@ -260,6 +185,9 @@ if (isset($_SESSION['id'])) {
         });
     </script>
 
+    <!-- ICON -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

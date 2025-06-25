@@ -1,10 +1,8 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
-    header('Location: main.php');
+    header('Location: ./main.php');
     exit();
 }
 ?>
@@ -32,7 +30,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                 <button type="submit">Tìm</button>
             </div>
             <div class="hotline">
-                HOTLINE 24/7: 0999.999.999
+                HOTLINE 24/7: 0986.689.999
             </div>
             <div class="icon-wrapper login-icon" title="Đăng nhập">
                 <a href="">
@@ -50,9 +48,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     <nav class="navigation">
         <div class="container">
             <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="./gioithieu.html">Giới thiệu</a></li>
-                <li><a href="./chinhsach.html">Chính sách</a></li>
+                <li><a href="./main.php">Trang chủ</a></li>
+                <li><a href="./gioithieu.php">Giới thiệu</a></li>
+                <li><a href="./chinhsach.php">Chính sách</a></li>
             </ul>
         </div>
     </nav>
@@ -61,29 +59,29 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         <div class="container account-page-layout">
             <aside class="account-sidebar">
                 <?php
-                if (session_status() === PHP_SESSION_NONE) {
-                    session_start();
-                }
+
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                     echo '
-                <div class="user-profile-card">';
-                    if ($_SESSION['user_image'] == null) {
-                        echo '<img src="" alt="User Avatar" class="avatar">';
+                    <div class="user-profile-card">';
+                    if ($_SESSION['image'] == null) {
+                        echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtRs_rWILOMx5-v3aXwJu7LWUhnPceiKvvDg&usqp=CAU" alt="User Avatar" class="avatar">';
                     } else {
-                        echo '<img src="' . $_SESSION['user_image'] . '" alt="User Avatar" class="avatar">';
+                        echo '<img src="' . $_SESSION['image'] . '" alt="User Avatar" class="avatar">';
                     }
                     if ($_SESSION['name']  == null) {
                         echo '<p class="user-name"><strong>' .  $_SESSION['id'] . '</strong></p>';
+                    } else {
                         echo '<p class="user-name"><strong>' .  $_SESSION['name'] . '</strong></p>';
                     }
-                    echo '<p class="join-date">Tham gia từ: ' . $_SESSION['createAt'] . '</p>';
+
+                    echo '<p class="join-date">Tham gia từ: <br>' . $_SESSION['createAt'] . '</p>';
                     echo '
                     <div class="action-buttons">
                         <button class="btn logout-btn">Đăng xuất</button>';
                     if ($_SESSION['role'] == 1) {
                         echo '
-                        <a href="#" class="btn dashboard-btn">Dashboard</a>';
+                        <a href="./dash_dsk.php" class="btn dashboard-btn">Dashboard</a>';
                     }
                     echo '
                     </div>
@@ -99,18 +97,15 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <section class="account-main-content">
                 <h1>Thông tin tài khoản</h1>
                 <?php
-                if (session_status() === PHP_SESSION_NONE) {
-                    session_start();
-                }
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     echo '<div class="info-item">';
                     echo '
                     <div class="info-details">
                         <p>Ảnh đại diện</p>';
-                    if ($_SESSION['user_image'] == null) {
-                        echo '<img src="https://i.imgur.com/8c722pW.png" alt="Avatar Preview" class="info-avatar">';
+                    if ($_SESSION['image'] == null) {
+                        echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtRs_rWILOMx5-v3aXwJu7LWUhnPceiKvvDg&usqp=CAU" alt="Avatar Preview" class="info-avatar">';
                     } else {
-                        echo '<img src="' . $_SESSION['user_image'] . '" alt="Avatar Preview" class="info-avatar">';
+                        echo '<img src="' . $_SESSION['image'] . '" alt="Avatar Preview" class="info-avatar">';
                     }
                     echo '
                             </div>
@@ -120,14 +115,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                 <div class="info-item">
                     <?php
-                    if (session_status() === PHP_SESSION_NONE) {
-                        session_start();
-                    }
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         echo '<div class="info-details">
                         <p>Họ tên</p>';
                         if ($_SESSION['name'] == null) {
                             echo '<span class="value">Chưa có thông tin</span>';
+                        } else {
                             echo '<span class="value">' .  $_SESSION['name'] . '</span>';
                             echo '</div>';
                         }
@@ -137,14 +130,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                 <div class="info-item">
                     <?php
-                    if (session_status() === PHP_SESSION_NONE) {
-                        session_start();
-                    }
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         echo '<div class="info-details">
                         <p>Email</p>';
                         if ($_SESSION['email'] == null) {
                             echo '<span class="value">Chưa có thông tin</span>';
+                        } else {
                             echo '<span class="value">' .  $_SESSION['email'] . '</span>';
                             echo '</div>';
                         }
@@ -154,9 +145,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                 <div class="info-item">
                     <?php
-                    if (session_status() === PHP_SESSION_NONE) {
-                        session_start();
-                    }
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         echo '
                     <div class="info-details">
@@ -175,7 +163,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="footer-column">
                 <h4>THÔNG TIN LIÊN HỆ</h4>
                 <p><strong>Miax Lighting</strong> - Đơn vị chuyên phân phối, cung cấp các thiết bị ánh sáng sân khấu, tiệc cưới, karaoke toàn quốc.</p>
-                <p>Số Hotline/Zalo: 0999.999.999</p>
+                <p>Số Hotline/Zalo: 0986.689.999</p>
                 <p>Email: miaxstorevn@gmail.com</p>
                 <p>Website: https://miaxlighting.com</p>
                 <p>Người chịu trách nhiệm: Nguyễn Tuấn Điệp</p>
@@ -183,9 +171,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="footer-column">
                 <h4>CHÍNH SÁCH TẠI MIAX LIGHTING</h4>
                 <ul>
-                    <li><a href="#">Chính sách thanh toán</a></li>
-                    <li><a href="#">Chính sách đổi sản phẩm</a></li>
-                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="./chinhsach.php">Chính sách thanh toán</a></li>
+                    <li><a href="./chinhsach.php">Chính sách đổi sản phẩm</a></li>
+                    <li><a href="./chinhsach.php">Chính sách bảo hành</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -212,7 +200,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                 <span>Tổng cộng:</span>
                 <span id="cartTotal">0 ₫</span>
             </div>
-            <a href="./giohang.html" style="text-decoration: none;">
+            <a href="./giohang.php" style="text-decoration: none;">
                 <button type="button" class="checkout-btn">THANH TOÁN</button>
             </a>
         </div>
